@@ -14,7 +14,7 @@ Pour exécuter ce projet en local, suivez ces étapes :
 
 2. Accédez au répertoire du projet :
     ```sh
-    cd Gestionnaire-de-recettes-de-cuisine
+    cd evenement-musical
     ```
 5. Ouvrez `index.html` dans votre navigateur.
 
