@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="./images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <title>Soca Fusion Nights</title>
+</head>
+<body>
+    <main>
+        <!--titre principale-->
+        <h1>Soca Fusion Nights</h1>
+
+        <!--image-->
+        <img class="img1" src="./images/music-group.jpg" alt="on a les 3 tête d'affiche Carla, Juan, José">
+
+        <!--fond sonore-->
+        <figure>
+            <figcaption>Ce qui vous attends</figcaption>
+            <audio controls autoplay loop src="audioSocca.mp3">
+              <a href="https://pixabay.com/fr/music/search/soca/"> Download audio </a>
+            </audio>
+        </figure>
+        
+        <hr>
+
+        <!--description de l'évènement-->
+        <p>
+            <h2>Déroulement des hostilités</h2>
+            
+            <ul class="ul1">
+                <li>
+                    <h3>Jour 1 : "Socca Groove avec Carla"</h3>
+                    <span><strong> Vendredi 24/11/23: </strong></span>La première nuit commence avec Carla, une sensation montante dans le monde de la socca. 
+                    Sa voix envoûtante, combinée à des rythmes enjoués, créera une atmosphère électrisante. 
+                    Carla, avec son charisme contagieux, entraînera le public dans une expérience musicale inoubliable, 
+                    fusionnant des sonorités modernes avec les éléments traditionnels de la socca.
+                </li>    
+
+                <li>
+                    <h3>Jour 2 : "Rétro Vibes avec Juan et son Steel Drum"</h3>
+                    <span><strong>Samedi 25/11/23: </strong></span>La deuxième soirée mettra en vedette Juan, un maître du steel drum qui apportera une touche rétro à la scène.
+                    Sa maîtrise du steel drum ajoutera une dimension tropicale à la socca,
+                    transportant le public dans une époque où les plages ensoleillées et les nuits festives étaient la norme. 
+                    Attendez-vous à des rythmes rétro remixés avec une énergie moderne, créant une ambiance unique.
+                </li>    
+
+                <li>
+                    <h3>Jour 3 : "Socca Fusion Jam Session"</h3>
+                    <!--imge des 3 tete d'affiche aligné horizontalement en html-->
+                    <span>
+                        <img src="Juan.jpg" alt="artiste Juan">
+                    </span>
+                    
+                    <span>
+                        <img src="carla.jpg" alt="artiste Carla">
+                    </span>
+
+                    <span>
+                        <img src="José.jpg" alt="artiste José">
+                    </span>
+
+                    <p>
+                        <span><strong>Dimanche 26/11/23:</strong></span>La clôture de cet événement épique sera marquée par une jam session époustouflante, 
+                        réunissant Carla, Juan, et José. Ces talents exceptionnels collaboreront sur scène pour créer une fusion magique de styles,
+                        mélangeant des éléments contemporains avec la pure essence de la socca. Cette nuit sera un hommage à la diversité musicale,
+                        laissant le public captivé par des performances spontanées et des surprises musicales.
+                    </p>
+                </li>
+            </ul> 
+        </p>
+
+        <hr>
+
+        <!--lieux de l'évènement-->
+        <h2>Lieux de l'évènement</h2>
+
+        <address>22 rue Jean-Marie David Pacé 35740</address>
+
+        <div id="maCarte" style="height: 500px;"></div>
+
+        <hr>
+
+        <h2>Prenez vos places</h2>
+        <!--formaulaire d'achat de billet-->
+        <form class="ticketPurchaseForm" action="" methode="post">
+            <ul class="ul2">
+                <li>
+                    <label for="Nom">Nom</label>
+                    <input id="Nom" class="" name="nom" type="text" placeholder="tapez votre Nom" >
+                </li>
+                
+                <li>
+                    <label for="Prénom">Prénom</label>
+                    <input id="Prénom" class="" name="prenom" type="text" placeholder="tapez votre Prénom" >
+                </li>
+                
+                <li>
+                    <label for="e-mail">email</label>
+                    <input id="e-mail" class="" name="e-mail" type="email" placeholder="tapez votre e-mail" >
+                </li>
+
+                <li>
+                    <label for="typePass">Type de Pass:</label>
+                    <select id="typePass" name="typePass">
+                        <option value="" disabled selected>
+                            Choisir ici
+                        </option>
+        
+                        <option value="1day">
+                            Pass un jour 6 euros
+                        </option>
+        
+                        <option value="2days">
+                            Pass deux jours 12 euros
+                        </option>
+        
+                        <option value="3days">
+                            Pass trois jours 15 euros
+                        </option>
+                    </select>
+    
+                    <!--<span class="qtyRestante">Reste "" Pass</span>-->
+                </li>
+
+                <li>
+                    <label for="qty" class="">Quantité de Pass:</label>
+                    <input id="qty" class="" name="qty" type="number" min="1" max="4">
+                </li>
+
+                <li>
+                    <label for="total">Total TTC</label>
+                    <input id="total" class="" name="total" type="text">
+                </li>
+            </ul>
+
+            <input type="submit" value="Acheter">
+        </form>
+
+        <hr>
+
+        <!--Créez une section formulaire pour une demande d’informations nom, email, message, n° de tel, sujet 
+        (billetterie, organisation, SAV, remboursement), donner le choix de comment nous pouvons être recontacter (par téléphone ou/et par email),  bouton envoyer -->
+        <h2>Demande d'informations</h2>
+
+        <form action="" method="post">
+            <ul class="ul3">
+                <li>
+                    <label for="nom">Nom</label>
+                    <input id="nom" class="" name="nom" type="text" placeholder="tapez votre nom" >
+                </li>
+
+                <li>
+                    <label for="prenom">Prénom</label>
+                    <input id="prenom" class="" name="prenom" type="text" placeholder="tapez votre prénom" >
+                </li>
+                
+                <li>
+                    <label for="e-mail">email</label>
+                    <input id="e-mail" class="" name="email" type="email" placeholder="tapez votre e-mail" >
+                </li>
+
+                <li>
+                    <label for="sujetMsg">Sujet</label>
+                    <select id="sujetMsg" name="sujet">
+                        <option value="" disabled selected>
+                            sélectionner ici
+                        </option>
+                        
+                        <option value="billetterie">
+                            Billleterie
+                        </option>
+
+                        <option value="organisation">
+                           Organisation
+                        </option>
+                        
+                        <option value="sav">
+                            SAV
+                        </option>
+                        
+                        <option value="remboursements">
+                            Remboursement
+                        </option>
+                    </select>
+                </li>
+                
+                <li>
+                    <div><label for="message">Message</label></div>
+                    <textarea id="message" name="message" rows="4" cols="50" placeholder="votre message ici">
+                    </textarea>
+                </li>
+                
+                <li>
+                    <label for="telephone">Téléphone</label>
+                    <input id="telephone" class="" name="telephone" type="tel" placeholder="xx.xx.xx.xx.xx" >
+                </li>
+
+                <!--coomment contacter l'utilisateur-->
+                <li>
+                    <label for="reachableTel">Je suis joignable par téléphone</label>
+                    <input id="reachableTel" class="" name="joinTel" type="checkbox">
+
+                    <label for="reachableMail">et/ou par mail</label>
+                    <input id="reachableMail" class="" name="joinMail" type="checkbox" checked>
+                </li>
+            </ul>
+
+            <input type="submit" value="Envoyer">
+        </form>
+
+        <hr>
+
+    </main>
+    
+    <!--sponsors image et lien de redirection vers leur boutique-->
+    <aside>
+        <p>On remercie nos sponsors</p>
+        <a href="https://www.auvergnerhonealpes.fr"><img class="img5" src="./images/sponsorRegion.jpg" alt="logo de la réion auvergnerhonealpes"></a>
+        <a href="https://mabanque.bnpparibas"><img class="img6" src="./images/spnosorBnp.jpg" alt="logo de la Banque BNP"></a>
+        <a href="https://www.burgerking.fr"><img class="img7" src="./images/sponsorBurgerKing.png" alt="logo de burgerking"></a>
+    </aside>
+
+    <hr>
+
+    <footer>
+        <p>
+            Vous pouvez suivre l'évènement sur notre <a href=""><span class="spanF">facebook</span></a>, <a href=""><span class="spanT">twitter</span></a>, <a href=""><span class="spanI">instagram</span></a> et <a href=""><span class="spanY">youtube</span></a>.
+        </p>        
+    </footer>
+
+    <script>
+        var mymap = L.map('maCarte').setView([48.14709, -1.75923], 15);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(mymap);
+
+        var marker = L.marker([48.14709, -1.75923]).addTo(mymap)
+        .bindPopup('Chez &lt;ALT/&gt; ! Prêt pour la fiesta ?')
+        .openPopup();
+    </script>
+</body>
+</html>

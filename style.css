@@ -1,0 +1,60 @@
+/*généralités*/
+body {
+    background: antiquewhite;
+    margin: 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+/*main*/
+h1 {
+    text-align: center;
+    color: black;
+    text-shadow: 10px -10px 4px blueviolet;
+}
+
+.img1{
+    width: 100%;
+}
+
+#maCarte {
+    border: 1px solid black;
+    height: 50%;
+    width: 50%;
+}
+
+.ul1, .ul2, .ul3 {
+    list-style-type: none;
+}
+
+h3 {
+    color: blueviolet;
+}
+
+/*footer*/
+.img5, .img6, .img7{
+    margin: 0;
+    width:31%;
+}
+
+a{
+    text-decoration: none;
+}
+
+.spanF{
+    color:blue;
+}
+
+
+.spanT{
+    color:rgb(11, 226, 226);
+}
+
+
+.spanI{
+    color: blueviolet;
+}
+
+
+.spanY{
+    color: red;
+}
